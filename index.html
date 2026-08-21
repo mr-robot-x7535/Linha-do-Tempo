@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etec Prof. José Sant'ana de Castro - Nossa História</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR FIXA -->
+    <nav id="navbar">
+        <div class="nav-logo">Etec Prof. José Sant'ana</div>
+        <div class="nav-links">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#timeline">Linha do Tempo</a>
+            <a href="#cursos">Cursos e Estrutura</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="menu-mobile" id="menu-mobile">
+        <a href="#inicio" onclick="fecharMenu()">Início</a>
+        <a href="#sobre" onclick="fecharMenu()">Sobre</a>
+        <a href="#timeline" onclick="fecharMenu()">Linha do Tempo</a>
+        <a href="#cursos" onclick="fecharMenu()">Cursos e Estrutura</a>
+        <a href="#contato" onclick="fecharMenu()">Contato</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header id="inicio">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Conheça nossa trajetória</p>
+            <h1>Etec Prof.<br><span>José Sant'ana de Castro</span></h1>
+            <p class="hero-sub">Tradição, inovação e excelência na formação profissional técnica e tecnológica.</p>
+            <a href="#timeline" class="btn-hero">Explorar Linha do Tempo</a>
+        </div>
+        <div class="hero-emblem">🎓</div>
+    </header>
+
+    <!-- SOBRE -->
+    <section class="secao" id="sobre">
+        <h2>Nossa História e Trajetória</h2>
+        <p>A Etec Prof. José Sant'ana de Castro se consolida como uma referência em ensino técnico e de nível médio na região. Criada para suprir as necessidades do mercado de trabalho com mão de obra qualificada, a instituição se destaca pela qualidade de seu corpo docente e infraestrutura.</p>
+        <p>Ao longo dos anos, passamos por constantes expansões, modernizações de laboratórios e inclusão de novas áreas do conhecimento técnico, preparando gerações de alunos para o mercado e para o ensino superior.</p>
+    </section>
+
+    <!-- LINHA DO TEMPO (SUMÁRIO + TIMELINE MISTURADA) -->
+    <section class="secao secao-alt" id="timeline">
+        <h2>Linha do Tempo</h2>
+        <p>Acompanhe os principais marcos da nossa história:</p>
+        
+        <div class="sumario-links">
+            <a href="#ano-fundacao" class="btn-link">Fundação</a>
+            <a href="#ano-primeiro-curso" class="btn-link">Primeiros Cursos</a>
+            <a href="#ano-expansao" class="btn-link">Expansão</a>
+        </div>
+
+        <div class="timeline">
+            <!-- Evento 1 -->
+            <article id="ano-fundacao" class="evento">
+                <div class="evento-texto">
+                    <span class="ano-tag">Fundação</span>
+                    <h3>Fundação da Escola</h3>
+                    <p>A Etec Prof. José Sant'ana de Castro foi criada com o objetivo de oferecer ensino técnico de qualidade para a região, marcando o início de uma trajetória voltada à inovação e formação profissional.</p>
+                </div>
+                <div class="evento-imagem">
+                    <img src="https://via.placeholder.com/600x400" alt="Fundação da Etec">
+                </div>
+            </article>
+
+            <!-- Evento 2 (Invertido) -->
+            <article id="ano-primeiro-curso" class="evento evento-invertido">
+                <div class="evento-texto">
+                    <span class="ano-tag">Evolução</span>
+                    <h3>Primeiras Turmas e Cursos Técnicos</h3>
+                    <p>Com a expansão das demandas da região, novos cursos foram integrados à grade, permitindo a formação de centenas de estudantes em áreas fundamentais do mercado de trabalho.</p>
+                </div>
+                <div class="evento-imagem">
+                    <img src="https://via.placeholder.com/600x400" alt="Primeiras turmas da escola">
+                </div>
+            </article>
+
+            <!-- Evento 3 -->
+            <article id="ano-expansao" class="evento">
+                <div class="evento-texto">
+                    <span class="ano-tag">Crescimento</span>
+                    <h3>Modernização do Campus</h3>
+                    <p>Adoção de novos laboratórios, salas equipadas e melhorias estruturais para suportar o avanço tecnológico e os projetos pedagógicos da instituição.</p>
+                </div>
+                <div class="evento-imagem">
+                    <img src="https://via.placeholder.com/600x400" alt="Modernização do Campus">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- CURSOS E ESTRUTURA (CARDS ESTILO DRAKARYS) -->
+    <section class="secao" id="cursos">
+        <h2>Infraestrutura & Destaques</h2>
+        <p>A infraestrutura moderna garante um aprendizado prático alinhado ao mercado de trabalho atual.</p>
+        
+        <div class="cards-servicos">
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Laboratórios Tecnológicos</h3>
+                <p>Ambientes equipados com computadores modernos para cursos de Informática e Tecnologia.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Biblioteca Integrada</h3>
+                <p>Acervo amplo e espaços de estudo para apoio ao aprendizado contínuo do aluno.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔬</div>
+                <h3>Laboratórios Específicos</h3>
+                <p>Espaços práticos direcionados para disciplinas das áreas da indústria e saúde.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3>Corpo Docente Qualificado</h3>
+                <p>Professores atuantes e altamente capacitados na área pedagógica e mercadológica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="secao secao-alt" id="contato">
+        <h2>Contato e Localização</h2>
+        <p>Venha nos visitar ou entre em contato com nossa secretaria.</p>
+        <div class="contato-lista">
+            <div class="contato-item">
+                <span class="contato-icon">✉</span>
+                <span>contato@etec.sp.gov.br</span>
+            </div>
+            <div class="contato-item">
+                <span class="contato-icon">📞</span>
+                <span>(12) 0000-0000</span>
+            </div>
+            <div class="contato-item">
+                <span class="contato-icon">📍</span>
+                <span>Rua da Escola, 123 — SP</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Etec Prof. José Sant'ana de Castro · Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
