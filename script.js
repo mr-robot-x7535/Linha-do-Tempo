@@ -1,39 +1,59 @@
-// Controle do Menu Mobile
-const menuToggle = document.getElementById('menu-toggle');
-const menuMobile = document.getElementById('menu-mobile');
+// SELEÇÃO DOS ELEMENTOS DO TEMA
+const btnTema = document.getElementById('toggle-theme');
 
-menuToggle.addEventListener('click', function() {
-    menuMobile.classList.toggle('aberto');
-});
-
-function fecharMenu() {
-    menuMobile.classList.remove('aberto');
+function definirTema(tema) {
+    if (tema === 'escuro') {
+        document.body.classList.add('dark-mode');
+        btnTema.textContent = '☀️ Modo Claro';
+    } else {
+        document.body.classList.remove('dark-mode');
+        btnTema.textContent = '🌙 Modo Escuro';
+    }
 }
 
-// Troca de tom no fundo do Navbar ao rolar
-const navbar = document.getElementById('navbar');
+const temaSalvo = localStorage.getItem('tema');
 
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(18, 18, 18, 0.98)';
+if (temaSalvo) {
+    definirTema(temaSalvo);
+} else {
+    definirTema('claro');
+}
+
+btnTema.addEventListener('click', () => {
+    const eModoEscuro = document.body.classList.contains('dark-mode');
+    
+    if (eModoEscuro) {
+        definirTema('claro');
+        localStorage.setItem('tema', 'claro');
     } else {
-        navbar.style.background = 'rgba(18, 18, 18, 0.92)';
+        definirTema('escuro');
+        localStorage.setItem('tema', 'escuro');
     }
 });
 
-// Animação de entrada via Intersection Observer
-const secoes = document.querySelectorAll('.secao, .secao-alt, .card, .evento');
+// CONTROLE DA ABA LATERAL (PATRONO)
+const btnPatronoHero = document.getElementById('open-patrono');
+const btnFecharDrawer = document.getElementById('close-patrono');
+const drawerPatrono = document.getElementById('drawer-patrono');
+const drawerOverlay = document.getElementById('drawer-overlay');
 
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'aparecer 0.6s ease both';
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
+function abrirDrawer() {
+    drawerPatrono.classList.add('active');
+    drawerOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
-secoes.forEach(function(secao) {
-    secao.style.opacity = '0';
-    observer.observe(secao);
+function fecharDrawer() {
+    drawerPatrono.classList.remove('active');
+    drawerOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+if (btnPatronoHero) btnPatronoHero.addEventListener('click', abrirDrawer);
+
+btnFecharDrawer.addEventListener('click', fecharDrawer);
+drawerOverlay.addEventListener('click', fecharDrawer);
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') fecharDrawer();
 });
